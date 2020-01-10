@@ -2,6 +2,7 @@
 using namespace std;
 
 //Function returning gcd of two entered numbers
+//Euclids algorithm to find GCD of two numbers
 int gcd(int big, int small) {
   int rem = 1;
   while(1) {
