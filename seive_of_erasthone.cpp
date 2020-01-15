@@ -1,17 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
-  int arr[100];
-  for(int i = 0; i < 100; i++)
+  long long int arr[600851475143];
+  for(long long int i = 0; i < 600851475143; i++)
     arr[i] = i + 1;
-  for(int i = 2; i < 100; i++) {
-    for(int j = i + 1; j < 100; j++) {
+  for(long long int i = 2; i < 600851475143; i++) {
+    for(long long int j = i + 1; j < 600851475143; j++) {
       if(arr[j] % i == 0)
         arr[j] = 0;
     }
   }
-  for(int i = 0; i < 100; i++)
+  int largest_fact = 2;
+  for(long long int i = 0; i < 600851475143; i++)
     if(arr[i] != 0)
-      cout << arr[i] << endl;
+      if(arr[i] > largest_fact)
+        largest_fact = arr[i];
+  cout << largest_fact << endl;
   return 0;
 }
