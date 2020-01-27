@@ -15,10 +15,9 @@ int main() {
   vector<int> v;
   int size;
   cout << "Enter size: ";
-  cin >> size;{
-    int num;
-    cin >> num;
-    v.push_back(num);
+  cin >> size;
+  for(int i = 0; i < size; i++){
+    v.push_back(rand() % 100);
   }
   cout << "Array content are: ";
   for(int i = 0; i < size; i++)
