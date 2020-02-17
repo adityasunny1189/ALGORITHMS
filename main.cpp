@@ -1,4 +1,5 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void merge(int arr[], int left, int mid, int right)
@@ -49,16 +50,18 @@ void mergesort(int arr[], int left, int right)
         mergesort(arr, mid + 1, right);
         merge(arr, left, mid, right);
     }
+    sleep(1);
 }
 int main()
 {
+    clock_t start, end;
     int n;
     cout << "Enter value of n: ";
     cin >> n;
     int arr[n];
     for(int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        arr[i] = rand() % 100;
     }
     cout << "Entered unshorted array is: " << endl;
     for(int i = 0; i < n; i++)
@@ -66,12 +69,16 @@ int main()
         cout << arr[i] << " ";
     }
     cout << endl;
+    start = clock();
     mergesort(arr, 0, n - 1);
+    end = clock();
     cout << "Entered shorted array is: " << endl;
     for(int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
     cout << endl;
+    cout << start << " " << end << " " << CLOCKS_PER_SEC << endl;
+    cout << (double)(- start + end) / CLOCKS_PER_SEC << endl;
 }
 
